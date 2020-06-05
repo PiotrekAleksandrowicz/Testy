@@ -1,0 +1,36 @@
+# Testy
+
+Test1 
+Tworzenie konta na stronie http://automationpractice.com/index.php
+
+  Dane testowe:
+  
+      userLogin = "kowalskiJan@gmail.com" ;
+      userPassword = "Jan123";
+        
+        name = "Jan";
+        surname = "Kowalski";
+        adres ="Zabiniec";
+        miasto = "Miami";
+        postcode = "66666";
+        mobile = "666 666 666";
+        
+Test2 
+Zalogowanie się i wylogowanie się na nowo utworzone konto.
+
+Dane testowe:
+
+      userLogin = "kowalskiJan@gmail.com" ;
+      userPassword = "Jan123";
+      
+Test3
+Kupno koszulki za pomocą utworzonego konta
+
+Dane testowe:
+
+      userLogin = "kowalskiJan@gmail.com" ;
+      userPassword = "Jan123";
+
+      size L 
+      quantity 2
+      pay by check
