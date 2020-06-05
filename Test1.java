@@ -133,9 +133,9 @@ public class Test1 {
 
     }
 
-    ///@AfterClass
-    ///public void teardown() {
-    ///wd.quit();
-    //}/
+    @AfterClass
+    public void teardown() {
+        wd.quit();
+    }
 
 }

@@ -16,7 +16,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Test2 {
+public class Test3 {
 
     private WebDriver wd;
     private String login = "kowalskiJan@gmail.com";
@@ -33,9 +33,9 @@ public class Test2 {
     @Test
     public void logInLogOut() {
 
-        Test1 Test2 = new Test1();
+        Test1 Test3 = new Test1();
         wd = new ChromeDriver();
-        wd.get(Test2.getUrl());
+        wd.get(Test3.getUrl());
         wd.manage().window().maximize();
         wd.findElement(By.xpath("//*[@id=\"header\"]/div[2]/div/div/nav/div[1]/a")).click();
 
@@ -51,16 +51,47 @@ public class Test2 {
         WebElement password = wd.findElement(By.xpath("//*[@id=\"passwd\"]"));
         password.click();
         password.clear();
-        password.sendKeys(Test2.getUserPassword());
+        password.sendKeys(Test3.getUserPassword());
 
         wd.findElement(By.xpath("//*[@id=\"SubmitLogin\"]")).click();
 
-        wd.findElement(By.xpath("//*[@id=\"header\"]/div[2]/div/div/nav/div[2]/a")).click();
+        wd.findElement(By.xpath("//*[@id=\"block_top_menu\"]/ul/li[3]/a")).click();
 
-        wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        wd.findElement(By.xpath("//*[@id=\"center_column\"]/ul/li/div/div[2]/h5/a")).click();
+
+        wd.findElement(By.xpath("//*[@id=\"quantity_wanted_p\"]/a[2]")).click();
+
+        WebElement size = wd.findElement(By.xpath("//*[@id=\"uniform-group_1\"]"));
+        size.click();
+        wd.findElement(By.xpath("//*[@id=\"group_1\"]/option[3]")).click();
+
+        wd.findElement(By.xpath("//*[@id=\"add_to_cart\"]/button/span")).click();
+
+        wd.findElement(By.xpath("//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/a/span")).click();
+
+        wd.findElement(By.xpath("//*[@id=\"center_column\"]/p[2]/a[1]/span")).click();
+
+        js.executeScript("window.scrollTo(0,800)");
+
+        wd.findElement(By.xpath("//*[@id=\"center_column\"]/form/p/button/span")).click();
+
+        js.executeScript("window.scrollTo(0,700)");
+
+        wd.findElement(By.xpath("//*[@id=\"cgv\"]")).click();
+
+        wd.findElement(By.xpath("//*[@id=\"form\"]/p/button/span")).click();
+
+        wd.findElement(By.xpath("//*[@id=\"HOOK_PAYMENT\"]/div[1]/div/p/a")).click();
+
+        js.executeScript("window.scrollTo(0,800)");
+
+        wd.findElement(By.xpath("//*[@id=\"cart_navigation\"]/button/span")).click();
+
+        wd.findElement(By.xpath("//*[@id=\"header\"]/div[2]/div/div/nav/div[2]/a")).click();
 
 
     }
+
 
     @AfterClass
     public void teardown() {
